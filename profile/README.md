@@ -37,8 +37,9 @@ Drops or samples only when *you* choose. Compare with [Cribl, Grepr, and Tero �
 - **[log10x-decoder-java](https://github.com/log-10x/log10x-decoder-java)** · **[log10x-decoder-js](https://github.com/log-10x/log10x-decoder-js)** — decoder libraries.
 
 ### Deploy
-- Helm: **[helm-charts](https://github.com/log-10x/helm-charts)**, plus 10x-Engine bundles for **[OpenTelemetry](https://github.com/log-10x/opentelemetry-helm-charts)**, **[Elastic](https://github.com/log-10x/elastic-helm-charts)**, and **[Fluent / Fluent Bit](https://github.com/log-10x/fluent-helm-charts)**.
-- AWS Retriever (S3 offload) Terraform: **[terraform-aws-tenx-retriever](https://github.com/log-10x/terraform-aws-tenx-retriever)**.
+- **Edge Reporter** — a DaemonSet deployed with our Helm chart ([helm-charts](https://github.com/log-10x/helm-charts)); tails container logs alongside your forwarder for pre-SIEM cost visibility. [Deploy guide →](https://doc.log10x.com/apps/reporter/deploy/)
+- **10x Receiver** — a sidecar in your **existing** forwarder, enabled as a values overlay (`extraContainers`) on the forwarder's official Helm chart — Fluent Bit (`fluent/fluent-bit`), Fluentd, OTel Collector, or Filebeat (`elastic/filebeat`) — via `helm -f your-values.yaml -f receiver-values.yaml`. [Deploy guide →](https://doc.log10x.com/apps/receiver/deploy/)
+- **Retriever** — AWS S3-offload Terraform modules ([terraform-aws-tenx-retriever](https://github.com/log-10x/terraform-aws-tenx-retriever)).
 
 ### Works with your stack
 Forwarders (Fluent Bit, Fluentd, Filebeat, Logstash, OTel Collector, Vector, Splunk UF, Datadog Agent) → analyzers (Splunk, Datadog, Elastic, CloudWatch) → object storage (S3, Azure Blobs, GCS). No migration required.
