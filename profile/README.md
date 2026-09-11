@@ -10,7 +10,7 @@
   <a href="https://www.log10x.com">Website</a> &nbsp;·&nbsp;
   <a href="https://doc.log10x.com">Docs</a> &nbsp;·&nbsp;
   <a href="https://doc.log10x.com/faq/">FAQ</a> &nbsp;·&nbsp;
-  <a href="https://doc.log10x.com/apps/dev/">Try it (free local CLI)</a>
+  <a href="https://doc.log10x.com/engine/launcher/dev/">Try it (free local CLI)</a>
 </p>
 
 ---
@@ -29,7 +29,12 @@ Drops or samples only when *you* choose. Compare with [Cribl, Grepr, and Tero �
 ### Start here
 - 🧰 **[siem-check](https://github.com/log-10x/siem-check)** — before you drop a noisy log pattern, check whether your SIEM has downstream dependencies (dashboards, alerts, saved searches) on it. Supports Datadog, Splunk, Elasticsearch/Kibana, and CloudWatch. Standalone, no account.
 - 🤖 **[log10x-mcp](https://github.com/log-10x/log10x-mcp)** — the **10x MCP** server: per-pattern log-cost attribution for AI assistants (Claude, Cursor, Claude Desktop). Agentless, SIEM-side sampling.
-- 💻 **[Dev CLI](https://doc.log10x.com/apps/dev/)** — run the 10x Engine on your own log files locally and see your reduction ratio in minutes. Install via `brew tap log-10x/tap` ([homebrew-tap](https://github.com/log-10x/homebrew-tap)).
+- 💻 **[Dev CLI](https://doc.log10x.com/engine/launcher/dev/)** — run the 10x Engine on your own log files locally and see your reduction ratio in minutes. Install via `brew tap log-10x/tap` ([homebrew-tap](https://github.com/log-10x/homebrew-tap)).
+
+### Measure it yourself
+- 📊 **[Measuring lossless log compaction on 15 public datasets](https://www.log10x.com/blog/log-compaction-measured/)** — the published benchmark: 63.7% on a 215 MB Kubernetes stream, 46.9% across 14 LogHub sets, from -4.6% to 96.1%. Every input is public, the losing cases are in the table, and the two `docker run` commands at the end reproduce any row on your own log file.
+- **[benchmarks](https://github.com/log-10x/benchmarks)** — the harness behind that post: pinned tool versions, committed configs and committed reference results.
+- **[log10x-format](https://github.com/log-10x/log10x-format)** — the pattern-ID format specification, with a conformance suite.
 
 ### Open-source decoders & plugins (expand compact events at query time)
 - **[splunk-app](https://github.com/log-10x/splunk-app)** — search 10x-encoded events in Splunk with zero data loss.
