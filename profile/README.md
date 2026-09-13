@@ -32,7 +32,7 @@ Drops or samples only when *you* choose. Compare with [Cribl, Grepr, and Tero �
 - 💻 **[Dev CLI](https://doc.log10x.com/engine/launcher/dev/)** — run the 10x Engine on your own log files locally and see your reduction ratio in minutes. Install via `brew tap log-10x/tap` ([homebrew-tap](https://github.com/log-10x/homebrew-tap)).
 
 ### Measure it yourself
-- 📊 **[Measuring lossless log compaction on 15 public datasets](https://www.log10x.com/blog/log-compaction-measured/)** — the published benchmark: 63.7% on a 215 MB Kubernetes stream, 46.9% across 14 LogHub sets, from -4.6% to 96.1%. Every input is public, the losing cases are in the table, and the two `docker run` commands at the end reproduce any row on your own log file.
+- 📊 **[Measuring lossless log compaction on 15 public datasets](https://www.log10x.com/blog/log-compaction-measured/)** — the published benchmark: 63.7% on a 215 MB stream of Kubernetes container output captured through Fluentd from a cluster running the OpenTelemetry demo, metadata included, and 72.3% on the log message text alone; both decode byte-identical. Across 14 LogHub sets, 46.9%, from -4.6% to 96.1%. Every input is public, the losing cases are in the table, and the two `docker run` commands at the end reproduce any row on your own log file. The three denominators and the script behind them are in [log-10x/benchmarks](https://github.com/log-10x/benchmarks/tree/main/otel-denominators).
 - **[benchmarks](https://github.com/log-10x/benchmarks)** — the harness behind that post: pinned tool versions, committed configs and committed reference results.
 - **[log10x-format](https://github.com/log-10x/log10x-format)** — the pattern-ID format specification, with a conformance suite.
 
